@@ -1,0 +1,1827 @@
+{
+  "_readme": {
+    "purpose": "Graph data for Green University AI Campus Navigation Assistant. Nodes = rooms/buildings/landmarks. Edges = direct walkable connections (doors/corridors/pathways).",
+    "distance_note": "Distances are APPROXIMATED for demo purposes: 1 unit = one room-width indoors, campus-level distances estimated from the aerial layout. Adjust freely if you get real measurements later.",
+    "levels": "Two graph levels: (1) campus-level graph connecting buildings/landmarks, (2) building-level graphs connecting rooms inside each building. A 'full route' = campus-level path + building-level path stitched together at the building's entry node."
+  },
+  "campus_level": {
+    "nodes": [
+      "Main Gate",
+      "Admin Building",
+      "Building B",
+      "Building E",
+      "Building F",
+      "Building G",
+      "Building H",
+      "Building J",
+      "Building K",
+      "Building L",
+      "Green Cafeteria",
+      "Cricket Ground",
+      "Mosque"
+    ],
+    "edges": [
+      {
+        "from": "Main Gate",
+        "to": "Admin Building",
+        "distance": 4
+      },
+      {
+        "from": "Admin Building",
+        "to": "Building B",
+        "distance": 3
+      },
+      {
+        "from": "Building B",
+        "to": "Building E",
+        "distance": 3
+      },
+      {
+        "from": "Building E",
+        "to": "Building F",
+        "distance": 2
+      },
+      {
+        "from": "Building F",
+        "to": "Building G",
+        "distance": 2
+      },
+      {
+        "from": "Building G",
+        "to": "Building H",
+        "distance": 2
+      },
+      {
+        "from": "Building H",
+        "to": "Building J",
+        "distance": 2
+      },
+      {
+        "from": "Building J",
+        "to": "Building K",
+        "distance": 2
+      },
+      {
+        "from": "Building K",
+        "to": "Building L",
+        "distance": 2
+      },
+      {
+        "from": "Building B",
+        "to": "Mosque",
+        "distance": 2
+      },
+      {
+        "from": "Building B",
+        "to": "Green Cafeteria",
+        "distance": 3
+      },
+      {
+        "from": "Green Cafeteria",
+        "to": "Building E",
+        "distance": 4
+      },
+      {
+        "from": "Admin Building",
+        "to": "Cricket Ground",
+        "distance": 6
+      },
+      {
+        "from": "Building L",
+        "to": "Cricket Ground",
+        "distance": 5
+      }
+    ],
+    "node_coords": {
+      "Main Gate": {
+        "x": 500,
+        "y": 620
+      },
+      "Admin Building": {
+        "x": 620,
+        "y": 180
+      },
+      "Building B": {
+        "x": 430,
+        "y": 300
+      },
+      "Building E": {
+        "x": 300,
+        "y": 380
+      },
+      "Building F": {
+        "x": 300,
+        "y": 460
+      },
+      "Building G": {
+        "x": 380,
+        "y": 520
+      },
+      "Building H": {
+        "x": 460,
+        "y": 560
+      },
+      "Building J": {
+        "x": 560,
+        "y": 560
+      },
+      "Building K": {
+        "x": 640,
+        "y": 520
+      },
+      "Building L": {
+        "x": 720,
+        "y": 460
+      },
+      "Green Cafeteria": {
+        "x": 500,
+        "y": 400
+      },
+      "Cricket Ground": {
+        "x": 760,
+        "y": 250
+      },
+      "Mosque": {
+        "x": 350,
+        "y": 220
+      }
+    }
+  },
+  "buildings": {
+    "AdminBuilding": {
+      "entry_node": "Front Desk",
+      "nodes": [
+        "Front Desk",
+        "Security Desk",
+        "Lift",
+        "Stair",
+        "Library",
+        "Circulation Desk",
+        "Librarian",
+        "Admission Office",
+        "Section Head",
+        "Male Washroom",
+        "Female Washroom",
+        "Logistics Office",
+        "D-1",
+        "D-2",
+        "D-3",
+        "D-4",
+        "D-5",
+        "D-6",
+        "EMI Room"
+      ],
+      "edges": [
+        {
+          "from": "Front Desk",
+          "to": "Lift",
+          "distance": 1
+        },
+        {
+          "from": "Front Desk",
+          "to": "Security Desk",
+          "distance": 1
+        },
+        {
+          "from": "Front Desk",
+          "to": "Admission Office",
+          "distance": 2
+        },
+        {
+          "from": "Admission Office",
+          "to": "Section Head",
+          "distance": 1
+        },
+        {
+          "from": "Admission Office",
+          "to": "Library",
+          "distance": 3
+        },
+        {
+          "from": "Library",
+          "to": "Circulation Desk",
+          "distance": 1
+        },
+        {
+          "from": "Library",
+          "to": "Librarian",
+          "distance": 2
+        },
+        {
+          "from": "Admission Office",
+          "to": "Male Washroom",
+          "distance": 1
+        },
+        {
+          "from": "Male Washroom",
+          "to": "Female Washroom",
+          "distance": 1
+        },
+        {
+          "from": "Female Washroom",
+          "to": "Lift",
+          "distance": 1
+        },
+        {
+          "from": "Librarian",
+          "to": "Logistics Office",
+          "distance": 2
+        },
+        {
+          "from": "Logistics Office",
+          "to": "D-1",
+          "distance": 1
+        },
+        {
+          "from": "D-1",
+          "to": "D-2",
+          "distance": 1
+        },
+        {
+          "from": "D-2",
+          "to": "D-3",
+          "distance": 1
+        },
+        {
+          "from": "D-3",
+          "to": "D-4",
+          "distance": 1
+        },
+        {
+          "from": "D-4",
+          "to": "D-5",
+          "distance": 1
+        },
+        {
+          "from": "Logistics Office",
+          "to": "D-6",
+          "distance": 1
+        },
+        {
+          "from": "D-4",
+          "to": "EMI Room",
+          "distance": 1
+        },
+        {
+          "from": "EMI Room",
+          "to": "Stair",
+          "distance": 1
+        },
+        {
+          "from": "D-5",
+          "to": "Stair",
+          "distance": 1
+        },
+        {
+          "from": "Stair",
+          "to": "Security Desk",
+          "distance": 1
+        }
+      ],
+      "node_coords": {
+        "Front Desk": {
+          "x": 300,
+          "y": 60
+        },
+        "Security Desk": {
+          "x": 352,
+          "y": 69
+        },
+        "Lift": {
+          "x": 398,
+          "y": 94
+        },
+        "Stair": {
+          "x": 434,
+          "y": 132
+        },
+        "Library": {
+          "x": 455,
+          "y": 181
+        },
+        "Circulation Desk": {
+          "x": 459,
+          "y": 233
+        },
+        "Librarian": {
+          "x": 447,
+          "y": 284
+        },
+        "Admission Office": {
+          "x": 418,
+          "y": 328
+        },
+        "Section Head": {
+          "x": 376,
+          "y": 361
+        },
+        "Male Washroom": {
+          "x": 326,
+          "y": 378
+        },
+        "Female Washroom": {
+          "x": 274,
+          "y": 378
+        },
+        "Logistics Office": {
+          "x": 224,
+          "y": 361
+        },
+        "D-1": {
+          "x": 182,
+          "y": 328
+        },
+        "D-2": {
+          "x": 153,
+          "y": 284
+        },
+        "D-3": {
+          "x": 141,
+          "y": 233
+        },
+        "D-4": {
+          "x": 145,
+          "y": 181
+        },
+        "D-5": {
+          "x": 166,
+          "y": 132
+        },
+        "D-6": {
+          "x": 202,
+          "y": 94
+        },
+        "EMI Room": {
+          "x": 248,
+          "y": 69
+        }
+      }
+    },
+    "BuildingE": {
+      "entry_node": "E-101",
+      "nodes": [
+        "E-101",
+        "E-102",
+        "E-103",
+        "E-104",
+        "E-105",
+        "E-106",
+        "E-107",
+        "E-108",
+        "E-109",
+        "E-110",
+        "E-111",
+        "Toilet-E"
+      ],
+      "edges": [
+        {
+          "from": "E-101",
+          "to": "E-103",
+          "distance": 1
+        },
+        {
+          "from": "E-103",
+          "to": "E-105",
+          "distance": 1
+        },
+        {
+          "from": "E-107",
+          "to": "E-109",
+          "distance": 1
+        },
+        {
+          "from": "E-109",
+          "to": "E-111",
+          "distance": 1
+        },
+        {
+          "from": "E-102",
+          "to": "E-104",
+          "distance": 1
+        },
+        {
+          "from": "E-104",
+          "to": "E-106",
+          "distance": 1
+        },
+        {
+          "from": "E-108",
+          "to": "E-110",
+          "distance": 1
+        },
+        {
+          "from": "E-101",
+          "to": "E-102",
+          "distance": 1
+        },
+        {
+          "from": "E-103",
+          "to": "E-104",
+          "distance": 1
+        },
+        {
+          "from": "E-105",
+          "to": "E-106",
+          "distance": 1
+        },
+        {
+          "from": "E-107",
+          "to": "E-108",
+          "distance": 1
+        },
+        {
+          "from": "E-109",
+          "to": "E-110",
+          "distance": 1
+        },
+        {
+          "from": "E-110",
+          "to": "Toilet-E",
+          "distance": 1
+        },
+        {
+          "from": "E-106",
+          "to": "E-108",
+          "distance": 3
+        }
+      ],
+      "node_coords": {
+        "E-101": {
+          "x": 300,
+          "y": 60
+        },
+        "E-102": {
+          "x": 380,
+          "y": 81
+        },
+        "E-103": {
+          "x": 439,
+          "y": 140
+        },
+        "E-104": {
+          "x": 460,
+          "y": 220
+        },
+        "E-105": {
+          "x": 439,
+          "y": 300
+        },
+        "E-106": {
+          "x": 380,
+          "y": 359
+        },
+        "E-107": {
+          "x": 300,
+          "y": 380
+        },
+        "E-108": {
+          "x": 220,
+          "y": 359
+        },
+        "E-109": {
+          "x": 161,
+          "y": 300
+        },
+        "E-110": {
+          "x": 140,
+          "y": 220
+        },
+        "E-111": {
+          "x": 161,
+          "y": 140
+        },
+        "Toilet-E": {
+          "x": 220,
+          "y": 81
+        }
+      }
+    },
+    "BuildingF": {
+      "entry_node": "F-128",
+      "nodes": [
+        "F-101",
+        "F-102",
+        "F-103",
+        "F-104",
+        "F-105",
+        "F-106",
+        "F-107",
+        "F-108",
+        "F-109",
+        "F-110",
+        "F-111",
+        "F-112",
+        "F-113",
+        "F-114",
+        "F-115",
+        "F-116",
+        "F-117(Chair GBS)",
+        "F-117(DCO)",
+        "F-119",
+        "F-120",
+        "F-121",
+        "F-122",
+        "F-123",
+        "F-124",
+        "F-125",
+        "F-126",
+        "F-127",
+        "F-128",
+        "F-129",
+        "F-130",
+        "F-131",
+        "F-132",
+        "F-133",
+        "F-134",
+        "F-135",
+        "F-136",
+        "F-137",
+        "F-138",
+        "F-139",
+        "Toilet-F(Female)",
+        "Faculty Toilet-F"
+      ],
+      "edges": [
+        {
+          "from": "F-139",
+          "to": "F-138",
+          "distance": 1
+        },
+        {
+          "from": "F-138",
+          "to": "F-137",
+          "distance": 1
+        },
+        {
+          "from": "F-137",
+          "to": "F-136",
+          "distance": 1
+        },
+        {
+          "from": "F-135",
+          "to": "F-136",
+          "distance": 1
+        },
+        {
+          "from": "F-135",
+          "to": "F-134",
+          "distance": 1
+        },
+        {
+          "from": "F-134",
+          "to": "F-133",
+          "distance": 1
+        },
+        {
+          "from": "F-133",
+          "to": "F-132",
+          "distance": 1
+        },
+        {
+          "from": "F-131",
+          "to": "F-132",
+          "distance": 1
+        },
+        {
+          "from": "F-131",
+          "to": "F-130",
+          "distance": 1
+        },
+        {
+          "from": "F-130",
+          "to": "F-129",
+          "distance": 1
+        },
+        {
+          "from": "F-129",
+          "to": "F-128",
+          "distance": 1
+        },
+        {
+          "from": "F-139",
+          "to": "Toilet-F(Female)",
+          "distance": 1
+        },
+        {
+          "from": "F-131",
+          "to": "Faculty Toilet-F",
+          "distance": 1
+        },
+        {
+          "from": "F-120",
+          "to": "F-121",
+          "distance": 1
+        },
+        {
+          "from": "F-121",
+          "to": "F-122",
+          "distance": 1
+        },
+        {
+          "from": "F-122",
+          "to": "F-123",
+          "distance": 1
+        },
+        {
+          "from": "F-123",
+          "to": "F-124",
+          "distance": 1
+        },
+        {
+          "from": "F-124",
+          "to": "F-125",
+          "distance": 1
+        },
+        {
+          "from": "F-125",
+          "to": "F-126",
+          "distance": 1
+        },
+        {
+          "from": "F-126",
+          "to": "F-127",
+          "distance": 1
+        },
+        {
+          "from": "F-136",
+          "to": "F-120",
+          "distance": 1
+        },
+        {
+          "from": "F-132",
+          "to": "F-125",
+          "distance": 1
+        },
+        {
+          "from": "F-119",
+          "to": "F-120",
+          "distance": 1
+        },
+        {
+          "from": "F-119",
+          "to": "F-117(DCO)",
+          "distance": 1
+        },
+        {
+          "from": "F-117(DCO)",
+          "to": "F-117(Chair GBS)",
+          "distance": 1
+        },
+        {
+          "from": "F-117(Chair GBS)",
+          "to": "F-116",
+          "distance": 1
+        },
+        {
+          "from": "F-116",
+          "to": "F-115",
+          "distance": 1
+        },
+        {
+          "from": "F-115",
+          "to": "F-114",
+          "distance": 1
+        },
+        {
+          "from": "F-114",
+          "to": "F-113",
+          "distance": 1
+        },
+        {
+          "from": "F-101",
+          "to": "F-102",
+          "distance": 1
+        },
+        {
+          "from": "F-102",
+          "to": "F-103",
+          "distance": 1
+        },
+        {
+          "from": "F-103",
+          "to": "F-104",
+          "distance": 1
+        },
+        {
+          "from": "F-104",
+          "to": "F-105",
+          "distance": 1
+        },
+        {
+          "from": "F-117(DCO)",
+          "to": "F-104",
+          "distance": 1
+        },
+        {
+          "from": "F-105",
+          "to": "F-107",
+          "distance": 1
+        },
+        {
+          "from": "F-107",
+          "to": "F-106",
+          "distance": 1
+        },
+        {
+          "from": "F-106",
+          "to": "F-108",
+          "distance": 1
+        },
+        {
+          "from": "F-108",
+          "to": "F-109",
+          "distance": 1
+        },
+        {
+          "from": "F-109",
+          "to": "F-110",
+          "distance": 1
+        },
+        {
+          "from": "F-110",
+          "to": "F-111",
+          "distance": 1
+        },
+        {
+          "from": "F-111",
+          "to": "F-112",
+          "distance": 1
+        }
+      ],
+      "node_coords": {
+        "F-101": {
+          "x": 300,
+          "y": 60
+        },
+        "F-102": {
+          "x": 324,
+          "y": 62
+        },
+        "F-103": {
+          "x": 348,
+          "y": 67
+        },
+        "F-104": {
+          "x": 371,
+          "y": 77
+        },
+        "F-105": {
+          "x": 392,
+          "y": 89
+        },
+        "F-106": {
+          "x": 411,
+          "y": 105
+        },
+        "F-107": {
+          "x": 427,
+          "y": 123
+        },
+        "F-108": {
+          "x": 441,
+          "y": 144
+        },
+        "F-109": {
+          "x": 451,
+          "y": 166
+        },
+        "F-110": {
+          "x": 457,
+          "y": 190
+        },
+        "F-111": {
+          "x": 460,
+          "y": 214
+        },
+        "F-112": {
+          "x": 459,
+          "y": 238
+        },
+        "F-113": {
+          "x": 454,
+          "y": 262
+        },
+        "F-114": {
+          "x": 446,
+          "y": 285
+        },
+        "F-115": {
+          "x": 434,
+          "y": 307
+        },
+        "F-116": {
+          "x": 419,
+          "y": 326
+        },
+        "F-117(Chair GBS)": {
+          "x": 402,
+          "y": 343
+        },
+        "F-117(DCO)": {
+          "x": 382,
+          "y": 358
+        },
+        "F-119": {
+          "x": 360,
+          "y": 368
+        },
+        "F-120": {
+          "x": 336,
+          "y": 376
+        },
+        "F-121": {
+          "x": 312,
+          "y": 380
+        },
+        "F-122": {
+          "x": 288,
+          "y": 380
+        },
+        "F-123": {
+          "x": 264,
+          "y": 376
+        },
+        "F-124": {
+          "x": 240,
+          "y": 368
+        },
+        "F-125": {
+          "x": 218,
+          "y": 358
+        },
+        "F-126": {
+          "x": 198,
+          "y": 343
+        },
+        "F-127": {
+          "x": 181,
+          "y": 326
+        },
+        "F-128": {
+          "x": 166,
+          "y": 307
+        },
+        "F-129": {
+          "x": 154,
+          "y": 285
+        },
+        "F-130": {
+          "x": 146,
+          "y": 262
+        },
+        "F-131": {
+          "x": 141,
+          "y": 238
+        },
+        "F-132": {
+          "x": 140,
+          "y": 214
+        },
+        "F-133": {
+          "x": 143,
+          "y": 190
+        },
+        "F-134": {
+          "x": 149,
+          "y": 166
+        },
+        "F-135": {
+          "x": 159,
+          "y": 144
+        },
+        "F-136": {
+          "x": 173,
+          "y": 123
+        },
+        "F-137": {
+          "x": 189,
+          "y": 105
+        },
+        "F-138": {
+          "x": 208,
+          "y": 89
+        },
+        "F-139": {
+          "x": 229,
+          "y": 77
+        },
+        "Toilet-F(Female)": {
+          "x": 252,
+          "y": 67
+        },
+        "Faculty Toilet-F": {
+          "x": 276,
+          "y": 62
+        }
+      }
+    },
+    "BuildingG": {
+      "entry_node": "G-101",
+      "nodes": [
+        "G-101",
+        "G-102",
+        "G-103",
+        "G-104",
+        "G-105",
+        "G-106",
+        "G-107",
+        "G-108",
+        "G-109",
+        "G-110",
+        "G-111"
+      ],
+      "edges": [
+        {
+          "from": "G-101",
+          "to": "G-103",
+          "distance": 1
+        },
+        {
+          "from": "G-103",
+          "to": "G-105",
+          "distance": 1
+        },
+        {
+          "from": "G-102",
+          "to": "G-104",
+          "distance": 1
+        },
+        {
+          "from": "G-104",
+          "to": "G-106",
+          "distance": 1
+        },
+        {
+          "from": "G-101",
+          "to": "G-102",
+          "distance": 1
+        },
+        {
+          "from": "G-103",
+          "to": "G-104",
+          "distance": 1
+        },
+        {
+          "from": "G-105",
+          "to": "G-106",
+          "distance": 1
+        },
+        {
+          "from": "G-105",
+          "to": "G-107",
+          "distance": 1
+        },
+        {
+          "from": "G-106",
+          "to": "G-108",
+          "distance": 1
+        },
+        {
+          "from": "G-107",
+          "to": "G-108",
+          "distance": 1
+        },
+        {
+          "from": "G-107",
+          "to": "G-109",
+          "distance": 1
+        },
+        {
+          "from": "G-108",
+          "to": "G-110",
+          "distance": 1
+        },
+        {
+          "from": "G-109",
+          "to": "G-110",
+          "distance": 1
+        },
+        {
+          "from": "G-109",
+          "to": "G-111",
+          "distance": 1
+        },
+        {
+          "from": "G-110",
+          "to": "G-111",
+          "distance": 1
+        }
+      ],
+      "node_coords": {
+        "G-101": {
+          "x": 300,
+          "y": 60
+        },
+        "G-102": {
+          "x": 387,
+          "y": 85
+        },
+        "G-103": {
+          "x": 446,
+          "y": 154
+        },
+        "G-104": {
+          "x": 458,
+          "y": 243
+        },
+        "G-105": {
+          "x": 421,
+          "y": 325
+        },
+        "G-106": {
+          "x": 345,
+          "y": 374
+        },
+        "G-107": {
+          "x": 255,
+          "y": 374
+        },
+        "G-108": {
+          "x": 179,
+          "y": 325
+        },
+        "G-109": {
+          "x": 142,
+          "y": 243
+        },
+        "G-110": {
+          "x": 154,
+          "y": 154
+        },
+        "G-111": {
+          "x": 213,
+          "y": 85
+        }
+      }
+    },
+    "BuildingH": {
+      "entry_node": "H-101",
+      "nodes": [
+        "H-101",
+        "H-102",
+        "H-103",
+        "H-104",
+        "H-105",
+        "H-106",
+        "H-107",
+        "H-108",
+        "H-109",
+        "H-110",
+        "H-111",
+        "H-112"
+      ],
+      "edges": [
+        {
+          "from": "H-101",
+          "to": "H-103",
+          "distance": 1
+        },
+        {
+          "from": "H-103",
+          "to": "H-105",
+          "distance": 1
+        },
+        {
+          "from": "H-102",
+          "to": "H-104",
+          "distance": 1
+        },
+        {
+          "from": "H-104",
+          "to": "H-106",
+          "distance": 1
+        },
+        {
+          "from": "H-107",
+          "to": "H-109",
+          "distance": 1
+        },
+        {
+          "from": "H-109",
+          "to": "H-111",
+          "distance": 1
+        },
+        {
+          "from": "H-108",
+          "to": "H-110",
+          "distance": 1
+        },
+        {
+          "from": "H-110",
+          "to": "H-112",
+          "distance": 1
+        },
+        {
+          "from": "H-101",
+          "to": "H-102",
+          "distance": 1
+        },
+        {
+          "from": "H-103",
+          "to": "H-104",
+          "distance": 1
+        },
+        {
+          "from": "H-105",
+          "to": "H-106",
+          "distance": 1
+        },
+        {
+          "from": "H-107",
+          "to": "H-108",
+          "distance": 1
+        },
+        {
+          "from": "H-109",
+          "to": "H-110",
+          "distance": 1
+        },
+        {
+          "from": "H-111",
+          "to": "H-112",
+          "distance": 1
+        },
+        {
+          "from": "H-106",
+          "to": "H-108",
+          "distance": 3
+        }
+      ],
+      "node_coords": {
+        "H-101": {
+          "x": 300,
+          "y": 60
+        },
+        "H-102": {
+          "x": 380,
+          "y": 81
+        },
+        "H-103": {
+          "x": 439,
+          "y": 140
+        },
+        "H-104": {
+          "x": 460,
+          "y": 220
+        },
+        "H-105": {
+          "x": 439,
+          "y": 300
+        },
+        "H-106": {
+          "x": 380,
+          "y": 359
+        },
+        "H-107": {
+          "x": 300,
+          "y": 380
+        },
+        "H-108": {
+          "x": 220,
+          "y": 359
+        },
+        "H-109": {
+          "x": 161,
+          "y": 300
+        },
+        "H-110": {
+          "x": 140,
+          "y": 220
+        },
+        "H-111": {
+          "x": 161,
+          "y": 140
+        },
+        "H-112": {
+          "x": 220,
+          "y": 81
+        }
+      }
+    },
+    "BuildingJ": {
+      "entry_node": "J-101",
+      "nodes": [
+        "J-101",
+        "J-102",
+        "J-103",
+        "J-104",
+        "J-105",
+        "J-106",
+        "J-107",
+        "J-108",
+        "J-109",
+        "J-110",
+        "J-111"
+      ],
+      "edges": [
+        {
+          "from": "J-111",
+          "to": "J-109",
+          "distance": 1
+        },
+        {
+          "from": "J-109",
+          "to": "J-107",
+          "distance": 1
+        },
+        {
+          "from": "J-107",
+          "to": "J-105",
+          "distance": 1
+        },
+        {
+          "from": "J-105",
+          "to": "J-103",
+          "distance": 1
+        },
+        {
+          "from": "J-103",
+          "to": "J-101",
+          "distance": 1
+        },
+        {
+          "from": "J-110",
+          "to": "J-108",
+          "distance": 1
+        },
+        {
+          "from": "J-108",
+          "to": "J-106",
+          "distance": 1
+        },
+        {
+          "from": "J-106",
+          "to": "J-104",
+          "distance": 1
+        },
+        {
+          "from": "J-104",
+          "to": "J-102",
+          "distance": 1
+        },
+        {
+          "from": "J-111",
+          "to": "J-110",
+          "distance": 1
+        },
+        {
+          "from": "J-109",
+          "to": "J-108",
+          "distance": 1
+        },
+        {
+          "from": "J-107",
+          "to": "J-106",
+          "distance": 1
+        },
+        {
+          "from": "J-105",
+          "to": "J-104",
+          "distance": 1
+        },
+        {
+          "from": "J-103",
+          "to": "J-102",
+          "distance": 1
+        }
+      ],
+      "node_coords": {
+        "J-101": {
+          "x": 300,
+          "y": 60
+        },
+        "J-102": {
+          "x": 387,
+          "y": 85
+        },
+        "J-103": {
+          "x": 446,
+          "y": 154
+        },
+        "J-104": {
+          "x": 458,
+          "y": 243
+        },
+        "J-105": {
+          "x": 421,
+          "y": 325
+        },
+        "J-106": {
+          "x": 345,
+          "y": 374
+        },
+        "J-107": {
+          "x": 255,
+          "y": 374
+        },
+        "J-108": {
+          "x": 179,
+          "y": 325
+        },
+        "J-109": {
+          "x": 142,
+          "y": 243
+        },
+        "J-110": {
+          "x": 154,
+          "y": 154
+        },
+        "J-111": {
+          "x": 213,
+          "y": 85
+        }
+      }
+    },
+    "BuildingK": {
+      "entry_node": "K-101",
+      "nodes": [
+        "K-101",
+        "K-102",
+        "K-103",
+        "K-104",
+        "K-105",
+        "K-106",
+        "K-107",
+        "K-108",
+        "K-109",
+        "K-110",
+        "K-111",
+        "K-112"
+      ],
+      "edges": [
+        {
+          "from": "K-111",
+          "to": "K-109",
+          "distance": 1
+        },
+        {
+          "from": "K-109",
+          "to": "K-107",
+          "distance": 1
+        },
+        {
+          "from": "K-105",
+          "to": "K-103",
+          "distance": 1
+        },
+        {
+          "from": "K-103",
+          "to": "K-101",
+          "distance": 1
+        },
+        {
+          "from": "K-112",
+          "to": "K-110",
+          "distance": 1
+        },
+        {
+          "from": "K-110",
+          "to": "K-108",
+          "distance": 1
+        },
+        {
+          "from": "K-106",
+          "to": "K-104",
+          "distance": 1
+        },
+        {
+          "from": "K-104",
+          "to": "K-102",
+          "distance": 1
+        },
+        {
+          "from": "K-111",
+          "to": "K-112",
+          "distance": 1
+        },
+        {
+          "from": "K-109",
+          "to": "K-110",
+          "distance": 1
+        },
+        {
+          "from": "K-107",
+          "to": "K-108",
+          "distance": 1
+        },
+        {
+          "from": "K-105",
+          "to": "K-106",
+          "distance": 1
+        },
+        {
+          "from": "K-103",
+          "to": "K-104",
+          "distance": 1
+        },
+        {
+          "from": "K-101",
+          "to": "K-102",
+          "distance": 1
+        },
+        {
+          "from": "K-106",
+          "to": "K-108",
+          "distance": 3
+        }
+      ],
+      "node_coords": {
+        "K-101": {
+          "x": 300,
+          "y": 60
+        },
+        "K-102": {
+          "x": 380,
+          "y": 81
+        },
+        "K-103": {
+          "x": 439,
+          "y": 140
+        },
+        "K-104": {
+          "x": 460,
+          "y": 220
+        },
+        "K-105": {
+          "x": 439,
+          "y": 300
+        },
+        "K-106": {
+          "x": 380,
+          "y": 359
+        },
+        "K-107": {
+          "x": 300,
+          "y": 380
+        },
+        "K-108": {
+          "x": 220,
+          "y": 359
+        },
+        "K-109": {
+          "x": 161,
+          "y": 300
+        },
+        "K-110": {
+          "x": 140,
+          "y": 220
+        },
+        "K-111": {
+          "x": 161,
+          "y": 140
+        },
+        "K-112": {
+          "x": 220,
+          "y": 81
+        }
+      }
+    },
+    "BuildingL": {
+      "entry_node": "L-101",
+      "nodes": [
+        "L-101",
+        "L-102",
+        "L-103",
+        "L-104",
+        "L-105",
+        "L-106",
+        "L-107",
+        "L-108",
+        "L-109",
+        "L-110",
+        "L-111",
+        "Toilet-L"
+      ],
+      "edges": [
+        {
+          "from": "L-111",
+          "to": "L-109",
+          "distance": 1
+        },
+        {
+          "from": "L-109",
+          "to": "L-107",
+          "distance": 1
+        },
+        {
+          "from": "L-105",
+          "to": "L-103",
+          "distance": 1
+        },
+        {
+          "from": "L-103",
+          "to": "L-101",
+          "distance": 1
+        },
+        {
+          "from": "Toilet-L",
+          "to": "L-110",
+          "distance": 1
+        },
+        {
+          "from": "L-110",
+          "to": "L-108",
+          "distance": 1
+        },
+        {
+          "from": "L-106",
+          "to": "L-104",
+          "distance": 1
+        },
+        {
+          "from": "L-104",
+          "to": "L-102",
+          "distance": 1
+        },
+        {
+          "from": "L-111",
+          "to": "Toilet-L",
+          "distance": 1
+        },
+        {
+          "from": "L-109",
+          "to": "L-110",
+          "distance": 1
+        },
+        {
+          "from": "L-107",
+          "to": "L-108",
+          "distance": 1
+        },
+        {
+          "from": "L-105",
+          "to": "L-106",
+          "distance": 1
+        },
+        {
+          "from": "L-103",
+          "to": "L-104",
+          "distance": 1
+        },
+        {
+          "from": "L-101",
+          "to": "L-102",
+          "distance": 1
+        },
+        {
+          "from": "L-106",
+          "to": "L-108",
+          "distance": 3
+        }
+      ],
+      "node_coords": {
+        "L-101": {
+          "x": 300,
+          "y": 60
+        },
+        "L-102": {
+          "x": 380,
+          "y": 81
+        },
+        "L-103": {
+          "x": 439,
+          "y": 140
+        },
+        "L-104": {
+          "x": 460,
+          "y": 220
+        },
+        "L-105": {
+          "x": 439,
+          "y": 300
+        },
+        "L-106": {
+          "x": 380,
+          "y": 359
+        },
+        "L-107": {
+          "x": 300,
+          "y": 380
+        },
+        "L-108": {
+          "x": 220,
+          "y": 359
+        },
+        "L-109": {
+          "x": 161,
+          "y": 300
+        },
+        "L-110": {
+          "x": 140,
+          "y": 220
+        },
+        "L-111": {
+          "x": 161,
+          "y": 140
+        },
+        "Toilet-L": {
+          "x": 220,
+          "y": 81
+        }
+      }
+    },
+    "BuildingB": {
+      "entry_node": "Main Entrance",
+      "note": "No floor plan photo provided - only room list mentioned by user. Layout is a simple assumed chain; replace with real connections if available.",
+      "nodes": [
+        "Main Entrance",
+        "Multipurpose Hall",
+        "Mosque Room",
+        "Gym Room",
+        "Classroom-B1",
+        "Classroom-B2"
+      ],
+      "edges": [
+        {
+          "from": "Main Entrance",
+          "to": "Multipurpose Hall",
+          "distance": 2
+        },
+        {
+          "from": "Multipurpose Hall",
+          "to": "Mosque Room",
+          "distance": 2
+        },
+        {
+          "from": "Multipurpose Hall",
+          "to": "Gym Room",
+          "distance": 2
+        },
+        {
+          "from": "Multipurpose Hall",
+          "to": "Classroom-B1",
+          "distance": 1
+        },
+        {
+          "from": "Classroom-B1",
+          "to": "Classroom-B2",
+          "distance": 1
+        }
+      ],
+      "node_coords": {
+        "Main Entrance": {
+          "x": 300,
+          "y": 60
+        },
+        "Multipurpose Hall": {
+          "x": 439,
+          "y": 140
+        },
+        "Mosque Room": {
+          "x": 439,
+          "y": 300
+        },
+        "Gym Room": {
+          "x": 300,
+          "y": 380
+        },
+        "Classroom-B1": {
+          "x": 161,
+          "y": 300
+        },
+        "Classroom-B2": {
+          "x": 161,
+          "y": 140
+        }
+      }
+    }
+  },
+  "node_types": {
+    "E-101": "Lab",
+    "E-102": "Lab",
+    "E-103": "Classroom",
+    "E-104": "Lab",
+    "E-105": "Classroom",
+    "E-106": "Classroom",
+    "E-107": "Classroom",
+    "E-108": "Classroom",
+    "E-109": "Lab",
+    "E-110": "Classroom",
+    "E-111": "Lab",
+    "Toilet-E": "Washroom",
+    "F-101": "Administrative",
+    "F-102": "Administrative",
+    "F-103": "Administrative",
+    "F-104": "Administrative",
+    "F-105": "Administrative",
+    "F-106": "Administrative",
+    "F-107": "Administrative",
+    "F-108": "Administrative",
+    "F-109": "Administrative",
+    "F-110": "Administrative",
+    "F-111": "Administrative",
+    "F-112": "Administrative",
+    "F-113": "Administrative",
+    "F-114": "Administrative",
+    "F-115": "Administrative",
+    "F-116": "Administrative",
+    "F-117(Chair GBS)": "Administrative",
+    "F-117(DCO)": "Administrative",
+    "F-119": "Administrative",
+    "F-120": "Administrative",
+    "F-121": "Administrative",
+    "F-122": "Administrative",
+    "F-123": "Administrative",
+    "F-124": "Administrative",
+    "F-125": "Administrative",
+    "F-126": "Administrative",
+    "F-127": "Administrative",
+    "F-128": "Administrative",
+    "F-129": "Administrative",
+    "F-130": "Administrative",
+    "F-131": "Administrative",
+    "F-132": "Administrative",
+    "F-133": "Administrative",
+    "F-134": "Administrative",
+    "F-135": "Administrative",
+    "F-136": "Administrative",
+    "F-137": "Administrative",
+    "F-138": "Administrative",
+    "F-139": "Administrative",
+    "Toilet-F(Female)": "Washroom",
+    "Faculty Toilet-F": "Washroom",
+    "G-101": "Lab",
+    "G-102": "Other",
+    "G-103": "Classroom",
+    "G-104": "Classroom",
+    "G-105": "Classroom",
+    "G-106": "Classroom",
+    "G-107": "Lab",
+    "G-108": "Classroom",
+    "G-109": "Lab",
+    "G-110": "Lab",
+    "G-111": "Lab",
+    "H-101": "Lab",
+    "H-102": "Classroom",
+    "H-103": "Classroom",
+    "H-104": "Classroom",
+    "H-105": "Classroom",
+    "H-106": "Classroom",
+    "H-107": "Classroom",
+    "H-108": "Classroom",
+    "H-109": "Lab",
+    "H-110": "Classroom",
+    "H-111": "Lab",
+    "H-112": "Lab",
+    "J-101": "Classroom",
+    "J-102": "Other",
+    "J-103": "Lab",
+    "J-104": "Medical",
+    "J-105": "Classroom",
+    "J-106": "Classroom",
+    "J-107": "Classroom",
+    "J-108": "Lab",
+    "J-109": "Classroom",
+    "J-110": "Classroom",
+    "J-111": "Classroom",
+    "K-101": "Lab",
+    "K-102": "Lab",
+    "K-103": "Classroom",
+    "K-104": "Classroom",
+    "K-105": "Classroom",
+    "K-106": "Classroom",
+    "K-107": "Lab",
+    "K-108": "Classroom",
+    "K-109": "Lab",
+    "K-110": "Lab",
+    "K-111": "Classroom",
+    "K-112": "Classroom",
+    "L-101": "Other",
+    "L-102": "Classroom",
+    "L-103": "Classroom",
+    "L-104": "Lab",
+    "L-105": "Classroom",
+    "L-106": "Lab",
+    "L-107": "Classroom",
+    "L-108": "Classroom",
+    "L-109": "Other",
+    "L-110": "Classroom",
+    "L-111": "Other",
+    "Toilet-L": "Washroom",
+    "Front Desk": "Administrative",
+    "Security Desk": "Administrative",
+    "Lift": "Other",
+    "Stair": "Other",
+    "Library": "Library",
+    "Circulation Desk": "Library",
+    "Librarian": "Library",
+    "Admission Office": "Administrative",
+    "Section Head": "Administrative",
+    "Male Washroom": "Washroom",
+    "Female Washroom": "Washroom",
+    "Logistics Office": "Administrative",
+    "D-1": "Administrative",
+    "D-2": "Administrative",
+    "D-3": "Administrative",
+    "D-4": "Administrative",
+    "D-5": "Administrative",
+    "D-6": "Administrative",
+    "EMI Room": "Other",
+    "Main Entrance": "Other",
+    "Multipurpose Hall": "Other",
+    "Mosque Room": "Other",
+    "Gym Room": "Other",
+    "Classroom-B1": "Classroom",
+    "Classroom-B2": "Classroom"
+  }
+}
