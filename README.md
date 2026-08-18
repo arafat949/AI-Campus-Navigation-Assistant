@@ -1,142 +1,167 @@
-AI Campus Navigation Assistant
-CSE316 — Artificial Intelligence Project
+# 🎓 AI Campus Navigation Assistant
 
-Green University of Bangladesh
+### CSE316 — Artificial Intelligence Project
 
-An AI-powered campus navigation and utility system built with Python and Flask. The project demonstrates classic Artificial Intelligence algorithms using a graph-based model of the Green University of Bangladesh campus, including buildings, rooms, routes, scheduling, game intelligence, and congestion estimation.
+**Green University of Bangladesh**
 
-🚀 Features
-🗺️ Smart campus navigation between buildings and rooms
-🔍 Route finding using BFS, DFS, and IDDFS
-🎨 Conflict-free room/time-slot allocation using Graph Coloring
-🧩 Classroom booking and N-Queens problem using CSP
-🎮 AI-powered Tic-Tac-Toe using Minimax and Alpha-Beta Pruning
-🧠 Corridor and classroom congestion estimation using Fuzzy Logic
-📊 Algorithm execution traces and visualization
-🌐 Interactive web-based user interface
-🛠️ Tech Stack
-Backend
-Python 3
-Flask
+<p align="center">
+  <b>An AI-powered smart campus navigation and utility system built with Python and Flask.</b>
+</p>
 
-All AI algorithms are implemented from scratch inside the algorithms/ directory without using external AI or search libraries.
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3-blue?logo=python" />
+  <img src="https://img.shields.io/badge/Flask-Web%20App-black?logo=flask" />
+  <img src="https://img.shields.io/badge/AI-Algorithms-purple" />
+  <img src="https://img.shields.io/badge/Course-CSE316-success" />
+</p>
 
-Frontend
-HTML
-CSS
-Vanilla JavaScript
-SVG-based graph visualization
+---
 
-The frontend communicates with the Flask backend through a REST API and displays algorithm results interactively.
+## 🚀 About the Project
 
-Data
+**AI Campus Navigation Assistant** is an interactive web application designed to demonstrate multiple Artificial Intelligence algorithms using a graph-based model of the Green University of Bangladesh campus.
 
-The campus graph data is stored in:
+The system can find routes between buildings and rooms, allocate rooms without conflicts, solve the N-Queens problem, play Tic-Tac-Toe against an AI opponent, and estimate campus congestion.
 
-data/campus_graph_data.json
+---
 
-The system uses a two-level graph structure:
+## ✨ Key Features
 
-Campus Level: Main Gate, Admin Building, and Buildings B, E, F, G, H, J, K, and L.
-Building Level: Individual rooms and their corridor or door connections.
+🗺️ **Smart Navigation** — Find routes using BFS, DFS, and IDDFS
+🎨 **Graph Coloring** — Conflict-free room and time-slot allocation
+🧩 **Constraint Satisfaction** — N-Queens and classroom booking
+🎮 **AI Tic-Tac-Toe** — Minimax with Alpha-Beta Pruning
+🧠 **Fuzzy Logic** — Estimate classroom and corridor congestion
+📊 **Visualization** — Interactive algorithm results and graph visualization
 
-Since exact physical measurements were not available, distances are approximated using a unit-based scale. Approximately:
+---
 
-1 unit ≈ one room width
+## 🤖 AI Algorithms
 
-These values can later be replaced with real measurements without changing the AI algorithm implementations.
+| Algorithm                | Application                                |
+| ------------------------ | ------------------------------------------ |
+| **BFS**                  | Finds the shortest route with minimum hops |
+| **DFS**                  | Explores alternative routes                |
+| **IDDFS**                | Iterative deepening search                 |
+| **Graph Coloring**       | Conflict-free exam/room scheduling         |
+| **CSP**                  | N-Queens and classroom allocation          |
+| **Minimax + Alpha-Beta** | Intelligent Tic-Tac-Toe opponent           |
+| **Fuzzy Logic**          | Campus congestion estimation               |
 
-🤖 Algorithms Implemented
-Algorithm	File	Purpose
-BFS	algorithms/pathfinding.py	Finds the shortest route based on the fewest hops
-DFS	algorithms/pathfinding.py	Explores alternative routes
-IDDFS	algorithms/pathfinding.py	Depth-limited search with iterative deepening
-Graph Coloring	algorithms/graph_coloring.py	Conflict-free exam or room time-slot allocation
-CSP	algorithms/csp.py	N-Queens and classroom/time-slot booking
-Minimax + Alpha-Beta	algorithms/minimax.py	AI opponent for Tic-Tac-Toe
-Fuzzy Logic	algorithms/fuzzy.py	Estimates classroom and corridor congestion
-📂 Project Structure
-campus_nav_project/
+---
+
+## 🛠️ Tech Stack
+
+```text
+Backend     → Python + Flask
+Frontend    → HTML + CSS + JavaScript
+Visualization → SVG Graph
+Data        → JSON
+```
+
+---
+
+## 📂 Project Structure
+
+```text
+AI-Campus-Navigation-Assistant/
 │
-├── app.py                     # Flask app and REST API routes
-├── requirements.txt           # Project dependencies
-├── README.md                  # Project documentation
+├── 📄 app.py
+├── 📄 requirements.txt
 │
-├── data/
-│   └── campus_graph_data.json # Campus and building room graphs
+├── 📁 algorithms/
+│   ├── pathfinding.py
+│   ├── graph_coloring.py
+│   ├── csp.py
+│   ├── minimax.py
+│   └── fuzzy.py
 │
-├── algorithms/
-│   ├── pathfinding.py         # BFS, DFS, IDDFS
-│   ├── graph_coloring.py      # Graph Coloring algorithm
-│   ├── csp.py                 # N-Queens and Room Booking CSP
-│   ├── minimax.py             # Minimax and Alpha-Beta Pruning
-│   └── fuzzy.py               # Fuzzy Logic rule engine
+├── 📁 data/
+│   └── campus_graph_data.json
 │
-├── templates/
-│   └── index.html             # Main application interface
+├── 📁 templates/
+│   └── index.html
 │
-└── static/
+└── 📁 static/
     ├── css/
-    │   └── style.css
-    │
     └── js/
-        ├── main.js            # Dashboard and tab management
-        ├── graphviz.js        # SVG graph visualization
-        ├── navigation.js      # Navigation algorithms UI
-        ├── coloring.js        # Graph Coloring UI
-        ├── nqueens.js         # N-Queens UI
-        ├── game.js            # Minimax game UI
-        └── fuzzy.js           # Fuzzy Logic UI
-⚙️ How to Run the Project
-1. Clone the repository
+```
+
+---
+
+## ⚙️ Installation & Usage
+
+### 1️⃣ Clone the Repository
+
+```bash
 git clone https://github.com/arafat949/AI-Campus-Navigation-Assistant.git
-2. Go to the project directory
+```
+
+### 2️⃣ Go to the Project Folder
+
+```bash
 cd AI-Campus-Navigation-Assistant
-3. Install the required dependencies
+```
+
+### 3️⃣ Install Dependencies
+
+```bash
 pip install -r requirements.txt
-4. Run the application
+```
+
+### 4️⃣ Run the Application
+
+```bash
 python app.py
-5. Open in your browser
+```
+
+Then open:
+
+```text
 http://127.0.0.1:5000
-🏫 Campus Graph Model
+```
 
-The system represents the Green University of Bangladesh campus as a graph.
+---
 
-Buildings and rooms are represented as nodes.
-Corridors, doors, and routes are represented as edges.
-The campus-level graph connects major buildings.
-Building-level graphs represent rooms and their internal connections.
+## 🏫 Campus Graph
 
-The room adjacency information was created based on campus floor plans and route maps. Distance values are approximated and can easily be updated with real-world measurements in the future.
+The campus is represented as a graph where:
 
-📊 Algorithm Visualization
+* 🏢 Buildings and rooms are **nodes**
+* 🚶 Corridors and routes are **edges**
+* 📏 Distances are approximated using a unit-based scale
+* 🔄 Real measurements can be added later without changing the algorithms
 
-The project does not only display the final answer.
+The graph includes the **Main Gate, Admin Building, and Buildings B, E, F, G, H, J, K, and L**.
 
-Each algorithm also provides information about how it reached the solution, including:
+---
 
-Nodes explored
-Visit order
-Search path
-Backtracking operations
-Algorithm decision process
-Fuzzy rules triggered
+## 🎯 Project Objective
 
-This makes the system useful for both interactive learning and AI algorithm demonstration during project presentations or viva examinations.
+The main objective of this project is to demonstrate how different Artificial Intelligence algorithms can solve practical campus-related problems such as:
 
-🔮 Future Improvements
-Add real GPS-based campus navigation
-Use actual distance measurements between buildings
-Add real-time classroom availability
-Integrate indoor maps
-Add user authentication
-Store booking data in a database
-Add machine learning-based crowd prediction
-Develop a mobile application version
-🎓 Academic Purpose
+> Navigation • Scheduling • Optimization • Decision Making • Congestion Estimation
 
-This project was developed as part of the CSE316 — Artificial Intelligence course at:
+---
 
-Green University of Bangladesh
+## 🔮 Future Improvements
 
-The main objective of this project is to demonstrate how different Artificial Intelligence algorithms can be applied to solve practical campus-related problems such as navigation, scheduling, optimization,
+* 📍 Real GPS-based navigation
+* 🗺️ Indoor campus maps
+* 🤖 Machine Learning-based crowd prediction
+* 🏫 Real-time classroom availability
+* 📱 Mobile application version
+
+---
+
+## 👨‍💻 Developer
+
+**Md. Arafat Miah**
+CSE Student
+**Green University of Bangladesh**
+
+---
+
+<p align="center">
+  ⭐ If you like this project, consider giving it a star!
+</p>
